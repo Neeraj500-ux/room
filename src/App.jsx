@@ -140,6 +140,52 @@ img{max-width:100%}
 .ns-reveal{transition:opacity .7s ease,transform .7s ease,filter .7s ease}
 .ns-project{aspect-ratio:4/3}
 @media(max-width:639px){.ns-project{aspect-ratio:5/4}.ns-hero-stats{gap:.25rem;padding:.75rem}.ns-hero-stats p:first-child{font-size:1.4rem}.ns-mobile-menu{max-height:calc(100dvh - 75px);overflow-y:auto}}
+
+/* Neerajspace visual system */
+@keyframes ns-nav-enter{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes ns-item-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ns-aura{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(3%,-4%,0) scale(1.1)}}
+.ns-nav{isolation:isolate;animation:ns-nav-enter .65s cubic-bezier(.2,.75,.2,1) both;background:rgba(255,255,255,.78);border-bottom:1px solid rgba(255,255,255,.85);box-shadow:0 5px 24px rgba(11,61,145,.045);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);transition:background .3s,box-shadow .3s}
+.ns-nav.is-scrolled{background:rgba(255,255,255,.94);box-shadow:0 12px 35px rgba(11,61,145,.10)}
+.ns-brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:14px;background:linear-gradient(145deg,#0b3d91 10%,#1d6fd6 65%,#38bdf8);box-shadow:0 7px 18px rgba(11,61,145,.22),inset 0 1px rgba(255,255,255,.3);transition:transform .3s,box-shadow .3s}
+.ns-brand:hover .ns-brand-mark{transform:rotate(-8deg) scale(1.06);box-shadow:0 10px 24px rgba(11,61,145,.28)}
+.ns-brand-mark-inner{font-size:22px;font-weight:900;line-height:1;color:white;font-family:Georgia,serif;font-style:italic}
+.ns-desktop-nav{padding:5px;border:1px solid rgba(11,61,145,.07);border-radius:100px;background:rgba(241,247,252,.7)}
+.ns-nav-link{white-space:nowrap;position:relative;padding:10px 11px;border-radius:100px;color:rgba(23,43,77,.75);font-size:12px;font-weight:700;transition:background .25s,color .25s,box-shadow .25s,transform .25s}
+.ns-nav-link:hover{background:white;color:#0b3d91;transform:translateY(-1px)}
+.ns-nav-link.is-active{background:white;color:#0b3d91;box-shadow:0 4px 13px rgba(11,61,145,.1)}
+.ns-nav-cta{background:linear-gradient(110deg,#0b3d91,#1765c0 68%,#38bdf8)}
+.ns-menu-button{transition:background .3s,transform .3s,border-color .3s}.ns-menu-button:hover{background:#e7f4fe;transform:translateY(-2px)}
+.ns-menu-button.is-open{background:#0b3d91;color:white}
+.ns-menu-lines{position:relative;display:block;width:20px;height:18px}.ns-menu-lines span{position:absolute;left:0;width:20px;height:2px;border-radius:2px;background:currentColor;transform-origin:center;transition:top .35s cubic-bezier(.2,.75,.2,1),transform .35s cubic-bezier(.2,.75,.2,1),opacity .2s}
+.ns-menu-lines span:nth-child(1){top:2px}.ns-menu-lines span:nth-child(2){top:8px;width:15px}.ns-menu-lines span:nth-child(3){top:14px}
+.ns-menu-button.is-open .ns-menu-lines span:nth-child(1){top:8px;transform:rotate(45deg)}.ns-menu-button.is-open .ns-menu-lines span:nth-child(2){opacity:0;transform:translateX(10px)}.ns-menu-button.is-open .ns-menu-lines span:nth-child(3){top:8px;transform:rotate(-45deg)}
+.ns-menu-backdrop{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s,visibility .35s}.ns-menu-backdrop.is-open{opacity:1;visibility:visible;pointer-events:auto}
+.ns-mobile-panel{max-height:min(74dvh,670px);overscroll-behavior:contain;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-14px) scale(.97);transform-origin:top center;transition:opacity .38s cubic-bezier(.2,.75,.2,1),transform .38s cubic-bezier(.2,.75,.2,1),visibility .38s}
+.ns-mobile-panel.is-open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1)}
+.ns-mobile-link{transition:background .25s,color .25s,transform .25s}.ns-mobile-link:hover{background:#fff;color:#0b3d91;transform:translateX(3px)}
+.ns-mobile-panel.is-open .ns-mobile-link{animation:ns-item-enter .5s cubic-bezier(.2,.75,.2,1) both;animation-delay:calc(var(--item,7) * 35ms + 100ms)}
+.ns-hero{isolation:isolate;background:radial-gradient(circle at 82% 18%,rgba(56,189,248,.19),transparent 30%),radial-gradient(circle at 4% 82%,rgba(11,61,145,.10),transparent 30%),linear-gradient(160deg,#f1f7fc,#fff 72%)}
+.ns-hero::before{content:'';position:absolute;top:-120px;right:-10%;width:min(60vw,800px);aspect-ratio:1;border:1px solid rgba(56,189,248,.14);border-radius:50%;pointer-events:none}
+.ns-eyebrow{border:1px solid rgba(56,189,248,.35);letter-spacing:.13em;text-transform:uppercase}
+.ns-hero-stats{box-shadow:0 20px 55px rgba(11,61,145,.10),inset 0 1px #fff;position:relative;overflow:hidden}
+.ns-hero-stats::before{content:'';position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,#0b3d91,#38bdf8,transparent)}
+.ns-hero-stats>div:not(:first-child){border-left:1px solid rgba(11,61,145,.1);padding-left:clamp(.35rem,1vw,1.1rem)}
+.ns-image{border:7px solid rgba(255,255,255,.94);box-shadow:0 30px 80px rgba(11,61,145,.2),0 0 0 1px rgba(56,189,248,.12);filter:saturate(1.05)}
+.ns-mist-section{background:radial-gradient(circle at 90% 0,rgba(56,189,248,.08),transparent 28%),#f1f7fc}
+.ns-white-section{background-image:radial-gradient(circle at 2% 0,rgba(56,189,248,.045),transparent 26%)}
+.ns-card{position:relative;isolation:isolate;border:1px solid rgba(11,61,145,.09);box-shadow:0 12px 40px rgba(15,43,76,.06),inset 0 1px white;transition:transform .3s,box-shadow .3s,border-color .3s}
+.ns-card::before{content:'';position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;background:linear-gradient(135deg,rgba(56,189,248,.12),transparent 48%);opacity:0;transition:opacity .3s}
+.ns-card:hover::before{opacity:1}.ns-card:hover{border-color:rgba(56,189,248,.4);box-shadow:0 22px 55px rgba(11,61,145,.13)}
+.ns-why{background:radial-gradient(circle at 12% 14%,rgba(56,189,248,.22),transparent 28%),radial-gradient(circle at 92% 90%,rgba(56,189,248,.12),transparent 27%),#0b3d91}
+.ns-why-card{border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px rgba(255,255,255,.12),0 16px 40px rgba(0,18,67,.08);transition:transform .3s,background .3s,box-shadow .3s}
+.ns-why-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.16);box-shadow:0 22px 45px rgba(0,18,67,.15)}
+.ns-project{box-shadow:0 20px 50px rgba(11,61,145,.13)}.ns-project:hover{box-shadow:0 28px 65px rgba(11,61,145,.22)}
+.ns-cta{background:radial-gradient(circle at 85% 20%,rgba(56,189,248,.3),transparent 32%),linear-gradient(130deg,#0b3d91,#1765c0)}
+@media(max-width:1279px){.ns-nav-link{padding:9px 8px;font-size:11px}}
+@media(max-width:1023px){.ns-nav{z-index:50}.ns-nav-inner{min-height:68px}}
+@media(max-width:639px){.ns-brand-mark{width:36px;height:36px;border-radius:12px}.ns-mobile-panel{max-height:calc(100dvh - 92px)}.ns-hero-stats>div:not(:first-child){padding-left:.4rem}.ns-hero-stats p:first-child{font-size:clamp(1.2rem,6vw,1.5rem)}.ns-image{border-width:5px}}
+@media(prefers-reduced-motion:reduce){.ns-nav,.ns-mobile-panel.is-open .ns-mobile-link{animation:none!important}.ns-menu-button,.ns-menu-lines span,.ns-mobile-panel,.ns-menu-backdrop,.ns-card,.ns-card::before,.ns-why-card,.ns-brand-mark{transition-duration:.01ms!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rs-float,.rs-float2,.rs-shine,.rs-marq,.rs-blob,.rs-ring,.rs-in{animation:none!important}.ns-reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}*{scroll-behavior:auto!important}}
 `
 
@@ -376,75 +422,81 @@ function ScrollProgress() {
 
 
 function Navbar() {
-
   const [open, setOpen] = useState(false)
-
   const [scrolled, setScrolled] = useState(false)
+  const [active, setActive] = useState('home')
+  const menuButton = useRef(null)
 
   useEffect(() => {
-
-    const f = () => setScrolled(window.scrollY > 20)
-
-    f(); window.addEventListener('scroll', f, { passive: true })
-
-    return () => window.removeEventListener('scroll', f)
-
+    const update = () => setScrolled(window.scrollY > 16)
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => window.removeEventListener('scroll', update)
   }, [])
 
+  useEffect(() => {
+    const sections = nav.map(([, id]) => document.getElementById(id)).filter(Boolean)
+    if (!('IntersectionObserver' in window)) return
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+      if (visible) setActive(visible.target.id)
+    }, { rootMargin: '-22% 0px -65% 0px', threshold: [0, .1, .3] })
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!open) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') { setOpen(false); menuButton.current?.focus() }
+    }
+    const closeOnResize = () => { if (window.innerWidth >= 1024) setOpen(false) }
+    window.addEventListener('keydown', closeOnEscape)
+    window.addEventListener('resize', closeOnResize)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', closeOnEscape)
+      window.removeEventListener('resize', closeOnResize)
+    }
+  }, [open])
+
+  const closeMenu = () => setOpen(false)
   return (
-
-    <header className={`ns-nav sticky top-0 z-50 transition-shadow duration-300 ${scrolled ? 'shadow-soft' : ''}`}>
-
-      <div className={`mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 transition-all duration-300 ${scrolled ? 'py-2.5' : 'py-3.5'}`}>
-
-        <a href="#home" className="shrink-0 text-xl font-extrabold tracking-tight text-deep sm:text-2xl">Neeraj<span className="text-sky">space</span></a>
-
-        <nav aria-label="Main navigation" className="hidden items-center gap-1 xl:gap-2 lg:flex">
-
-          {nav.map(([n, id]) => (
-
-            <a key={id} href={`#${id}`} className="ns-nav-link text-[13px] font-semibold text-ink/75 xl:text-sm">
-
-              {n}
-
-            </a>
-
-          ))}
-
-        </nav>
-
-        <div className="hidden shrink-0 xl:block"><Btn>Get a Free Consultation</Btn></div>
-
-        <button type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)} className="flex h-11 w-11 items-center justify-center rounded-xl border border-deep/10 bg-mist text-deep lg:hidden">
-
-          <svg width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">{open ? <path d="M6 6l14 14M20 6L6 20" /> : <path d="M4 8h18M4 13h18M4 18h18" />}</svg>
-
-        </button>
-
-      </div>
-
-      <div id="mobile-navigation" className={`ns-mobile-menu grid bg-white transition-all duration-300 lg:hidden ${open ? 'grid-rows-[1fr] border-t border-mist' : 'grid-rows-[0fr]'}`}>
-
-        <div className="overflow-hidden px-5">
-
-          <div className="pb-6">
-
-            {nav.map(([n, id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)} className="block border-b border-mist py-3.5 font-semibold text-ink/80 hover:text-deep">{n}</a>)}
-
-            <div className="mt-4" onClick={() => setOpen(false)}><Btn>Get a Free Consultation</Btn></div>
-
-          </div>
-
+    <>
+      <div className={`ns-menu-backdrop fixed inset-0 z-40 bg-ink/35 backdrop-blur-[5px] lg:hidden ${open ? 'is-open' : ''}`} onClick={closeMenu} aria-hidden="true" />
+      <header className={`ns-nav sticky top-0 z-50 ${scrolled ? 'is-scrolled' : ''}`}>
+        <div className="ns-nav-inner mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:py-3.5">
+          <a href="#home" onClick={closeMenu} className="ns-brand group inline-flex shrink-0 items-center gap-2.5" aria-label="Neerajspace home">
+            <span aria-hidden="true" className="ns-brand-mark"><span className="ns-brand-mark-inner">N</span></span>
+            <span className="text-xl font-extrabold tracking-[-.055em] text-deep sm:text-[1.55rem]">Neeraj<span className="text-sky">space</span><span className="text-sky">.</span></span>
+          </a>
+          <nav aria-label="Main navigation" className="ns-desktop-nav hidden items-center gap-0.5 lg:flex">
+            {nav.map(([label, id]) => (
+              <a key={id} href={`#${id}`} aria-current={active === id ? 'page' : undefined} className={`ns-nav-link ${active === id ? 'is-active' : ''}`}>{label}</a>
+            ))}
+          </nav>
+          <a href="#contact" className="ns-nav-cta hidden shrink-0 items-center gap-2 rounded-full bg-deep px-5 py-3 text-[13px] font-bold text-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift xl:inline-flex">Let's Talk <span aria-hidden="true">↗</span></a>
+          <button ref={menuButton} type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((value) => !value)} className={`ns-menu-button relative flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-deep/10 bg-mist text-deep lg:hidden ${open ? 'is-open' : ''}`}>
+            <span className="ns-menu-lines" aria-hidden="true"><span /><span /><span /></span>
+          </button>
         </div>
-
-      </div>
-
-    </header>
-
+        <div id="mobile-navigation" aria-hidden={!open} className={`ns-mobile-panel absolute left-4 right-4 top-full mt-2 overflow-y-auto rounded-[26px] border border-white/90 bg-white/95 p-2 shadow-lift backdrop-blur-2xl lg:hidden ${open ? 'is-open' : ''}`}>
+          <div className="rounded-[21px] bg-gradient-to-br from-mist via-white to-sky/10 p-3">
+            <p className="px-3 pb-2 pt-1 text-[11px] font-extrabold uppercase tracking-[.2em] text-deep/50">Explore Neerajspace</p>
+            {nav.map(([label, id], index) => (
+              <a key={id} href={`#${id}`} onClick={closeMenu} tabIndex={open ? 0 : -1} style={{ '--item': index }} className={`ns-mobile-link flex items-center justify-between rounded-xl px-3 py-3.5 text-[15px] font-semibold ${active === id ? 'bg-white text-deep shadow-soft' : 'text-ink/80'}`}>
+                <span>{label}</span><span className="text-sky" aria-hidden="true">↗</span>
+              </a>
+            ))}
+            <a href="#contact" onClick={closeMenu} tabIndex={open ? 0 : -1} className="ns-mobile-link mt-3 flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-deep via-[#1765c0] to-sky px-5 text-sm font-bold text-white shadow-lift">Get a Free Consultation <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </header>
+    </>
   )
-
 }
-
 
 
 function BeforeAfter() {
@@ -570,7 +622,7 @@ function Contact() {
 
   return (
 
-    <section id="contact" className="ns-section relative overflow-hidden bg-mist">
+    <section id="contact" className="ns-section ns-mist-section relative overflow-hidden bg-mist">
 
       <div className="rs-blob pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-sky/20 blur-3xl" />
 
@@ -687,7 +739,7 @@ export default function App() {
 
         {/* Hero */}
 
-        <section id="home" onMouseMove={onHeroMove} onMouseLeave={() => setPar({ x: 0, y: 0 })} className="relative overflow-hidden bg-gradient-to-b from-mist to-white">
+        <section id="home" onMouseMove={onHeroMove} onMouseLeave={() => setPar({ x: 0, y: 0 })} className="ns-hero relative overflow-hidden bg-gradient-to-b from-mist to-white">
 
           <div className="rs-grid pointer-events-none absolute inset-0" />
 
@@ -699,7 +751,7 @@ export default function App() {
 
             <div>
 
-              <span className="rs-in inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1.5 text-xs font-semibold tracking-wide text-deep shadow-soft ring-1 ring-sky/30 backdrop-blur">
+              <span className="ns-eyebrow rs-in inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1.5 text-xs font-semibold tracking-wide text-deep shadow-soft ring-1 ring-sky/30 backdrop-blur">
 
                 <span className="relative flex h-2 w-2"><span className="rs-ring absolute inset-0 rounded-full bg-sky" /><span className="relative h-2 w-2 rounded-full bg-sky" /></span>
 
@@ -781,7 +833,7 @@ export default function App() {
 
         {/* Problems */}
 
-        <section className="ns-section">
+        <section className="ns-section ns-white-section">
 
           <div className="mx-auto max-w-7xl px-5">
 
@@ -815,7 +867,7 @@ export default function App() {
 
         {/* About */}
 
-        <section id="about" className="ns-section relative overflow-hidden bg-mist">
+        <section id="about" className="ns-section ns-mist-section relative overflow-hidden bg-mist">
 
           <div className="rs-blob pointer-events-none absolute -right-20 top-0 h-72 w-72 rounded-full bg-sky/20 blur-3xl" />
 
@@ -859,7 +911,7 @@ export default function App() {
 
         {/* Services */}
 
-        <section id="services" className="ns-section">
+        <section id="services" className="ns-section ns-white-section">
 
           <div className="mx-auto max-w-7xl px-5">
 
@@ -899,7 +951,7 @@ export default function App() {
 
         {/* Why */}
 
-        <section className="ns-section relative overflow-hidden bg-deep text-white">
+        <section className="ns-section ns-why relative overflow-hidden bg-deep text-white">
 
           <div className="rs-blob pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-sky/25 blur-3xl" />
 
@@ -921,7 +973,7 @@ export default function App() {
 
                 <Reveal key={t} delay={i * 80}>
 
-                  <Tilt className="group h-full rounded-3xl bg-white/10 p-7 ring-1 ring-white/15 backdrop-blur transition duration-300 hover:bg-white/15 hover:ring-sky/50" max={6}>
+                  <Tilt className="ns-why-card group h-full rounded-3xl bg-white/10 p-7 ring-1 ring-white/15 backdrop-blur transition duration-300 hover:bg-white/15 hover:ring-sky/50" max={6}>
 
                     <p className="text-4xl font-bold text-sky transition duration-500 group-hover:scale-110 group-hover:origin-left">{String(i + 1).padStart(2, '0')}</p>
 
@@ -945,7 +997,7 @@ export default function App() {
 
         {/* How it works */}
 
-        <section id="how" className="ns-section">
+        <section id="how" className="ns-section ns-white-section">
 
           <div className="mx-auto max-w-7xl px-5">
 
@@ -987,7 +1039,7 @@ export default function App() {
 
         {/* Projects */}
 
-        <section id="projects" className="ns-section bg-mist">
+        <section id="projects" className="ns-section ns-mist-section bg-mist">
 
           <div className="mx-auto max-w-7xl px-5">
 
@@ -1033,7 +1085,7 @@ export default function App() {
 
         {/* Before / After */}
 
-        <section className="ns-section">
+        <section className="ns-section ns-white-section">
 
           <div className="mx-auto max-w-5xl px-5">
 
@@ -1051,7 +1103,7 @@ export default function App() {
 
         {/* Testimonials */}
 
-        <section id="testimonials" className="ns-section relative overflow-hidden bg-mist">
+        <section id="testimonials" className="ns-section ns-mist-section relative overflow-hidden bg-mist">
 
           <div className="pointer-events-none absolute left-6 top-6 select-none text-[14rem] font-bold leading-none text-sky/10">“</div>
 
@@ -1097,7 +1149,7 @@ export default function App() {
 
         {/* FAQ */}
 
-        <section className="ns-section">
+        <section className="ns-section ns-white-section">
 
           <div className="mx-auto max-w-7xl px-5"><Head title="Frequently Asked Questions" /><Faq /></div>
 
@@ -1109,7 +1161,7 @@ export default function App() {
 
         <section className="px-5 pb-24">
 
-          <Reveal from="zoom" className="relative mx-auto max-w-7xl overflow-hidden rounded-[32px] bg-gradient-to-br from-deep to-[#1565c0] px-6 py-20 text-center text-white shadow-lift sm:px-12">
+          <Reveal from="zoom" className="ns-cta relative mx-auto max-w-7xl overflow-hidden rounded-[32px] bg-gradient-to-br from-deep to-[#1565c0] px-6 py-20 text-center text-white shadow-lift sm:px-12">
 
             <div className="rs-blob absolute -right-16 -top-16 h-72 w-72 rounded-full bg-sky/30 blur-3xl" />
 
